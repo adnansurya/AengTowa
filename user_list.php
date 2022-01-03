@@ -59,7 +59,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title" v-if="headerText">Daftar Pengguna</strong>
-                            
+                            <button class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#detailModal"><i class="fa fa-plus"></i> Tambah User</button>
                         </div>
                         
                         <div class="card-body">
@@ -95,6 +95,7 @@
                                 </tbody>
                             </table>                                    
                         </div>
+                        
                        
                     
                        
@@ -111,6 +112,53 @@
 
 
     <div class="clearfix"></div> 
+
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">User Baru</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">                                   
+                            <form action="form/add_user.php" method="post">
+                                    
+                                <div class="form-group">
+                                    <label class="small mb-1" for="nameTxt">Nama</label>
+                                    <input class="form-control py-4" type="text" name="nama" required/>
+                                </div> 
+                                <div class="form-group">
+                                    <label class="small mb-1" for="usernameTxt">Username</label>
+                                    <input class="form-control py-4" id="usernameTxt" type="text" name="username" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="passTxt">Password</label>
+                                    <input class="form-control py-4" id="passTxt" type="password" name="pass" required/>
+                                </div>  
+                                <div class="form-group">
+                                    <label class="small mb-1" for="roleSel">Role</label>
+                                    <select class="form-control" id="roleSel" name="role">
+                                        <option value="Petugas">Petugas</option>
+                                        <option value="Karyawan">Karyawan</option>                                                                        
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="emailTxt">Email</label>
+                                    <input class="form-control py-4" type="email" name="email" required/>
+                                </div>                                                              
+                                <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">                                                
+                                    <button class="btn btn-primary"  type="submit">Simpan</button>
+                                </div>
+                            </form>
+                            
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
     
     <?php include 'partials/footer.php'; ?>
 
