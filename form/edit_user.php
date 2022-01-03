@@ -14,7 +14,7 @@ if(($_SESSION['login_role'] == 'Admin')){
         password='" . $input['password'] . "', role='" . $input['role'] . "'
         WHERE id=" . $input['id_user'];
     } else if ($input['action'] === 'delete') {
-        $sql = "DELETE from user WHERE id='" . $input['id'] . "'";
+        $sql = "DELETE from user WHERE id='" . $input['id_user'] . "'";
                 
     } else{
         echo 'Action not Found';
