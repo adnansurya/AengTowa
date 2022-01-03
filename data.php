@@ -70,7 +70,7 @@
                                 <?php 
                                     $role = $_SESSION['login_role'];
                                     include 'db_access.php';                                         
-                                    $load = mysqli_query($conn, "SELECT * FROM data_sampah ORDER BY id DESC");   
+                                    $load = mysqli_query($conn, "SELECT * FROM data_sampah ORDER BY id ASC");   
                                     while ($row = mysqli_fetch_array($load)){
                                     echo '<tr>';
                                         echo '<td>'.$row['id'].'</td>';
