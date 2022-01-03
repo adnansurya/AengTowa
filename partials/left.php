@@ -13,10 +13,10 @@
                         <a href="data.php"><i class="menu-icon fa fa-list"></i>Data Log</a>
                     </li>
                     <li>
-                    <?php if ($role == 'Petugas') { ?>
+                 
                         <a href="permintaan.php"><i class="menu-icon fa fa-question"></i>Permintaan</a>
-                    <?php } else { ?>
-                    <?php } ?>
+                
+                  
                     </li>  
                     
                 <?php } ?>
