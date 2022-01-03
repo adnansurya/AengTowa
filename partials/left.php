@@ -12,13 +12,16 @@
                     <li>    
                         <a href="data.php"><i class="menu-icon fa fa-list"></i>Data Log</a>
                     </li>
-                    <li>
-                 
-                        <a href="permintaan.php"><i class="menu-icon fa fa-question"></i>Permintaan</a>
-                
-                  
+                    <li>                 
+                        <a href="permintaan.php"><i class="menu-icon fa fa-question"></i>Permintaan</a>                                  
+                    </li> 
+                    <?php if ($role == 'Admin') { ?>
+ 
+                    <li>                 
+                        <a href="user_list.php"><i class="menu-icon fa fa-users"></i>Daftar Pengguna</a>                                  
                     </li>  
-                    
+                    <?php } ?>
+
                 <?php } ?>
             </ul>
         </div><!-- /.navbar-collapse -->
