@@ -78,15 +78,27 @@
                                         echo '<td>'.$row['id_permintaan'].'</td>';
                                         echo '<td>'.$row['waktu_lapor'].'</td>';
                                         echo '<td>'.$row['karyawan'].'</td>';
-                                        echo '<td>Kelembaban : '.$row['kelembaban'].' % <br>Berat : '.$row['berat'].' kg <br>Pompa : '.$row['pompa'].'</td>';                                        
+                                        echo '<td><small>Kelembaban : </small> '.$row['kelembaban'].' % <br><small>Berat : </small>'.$row['berat'].' kg </td>';                                        
                                         echo '<td>'.$row['petugas'].'</td>';
                                         if($row['petugas'] == ''){
+
+                                          if ($role == 'Petugas') { 
+
                                             echo '<td>
                                                     <a href="form/angkut.php?id='.$row['id_permintaan'].'&petugas='. $_SESSION['login_id'].'">
                                                         <button type="button" class="btn btn-warning btn-sm">Angkut</button>
                                                     </a>
                                             
                                             </td>';
+
+                                          }else{
+                                            echo '<td>
+                                                    <a href="#">
+                                                        <button type="button" class="btn btn-warning btn-sm">Belum Diangkut</button>
+                                                    </a>
+                                            
+                                            </td>';
+                                          }
                                         }else{
                                         echo '<td>
                                                 <a href="#">
