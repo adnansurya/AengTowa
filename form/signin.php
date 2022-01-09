@@ -10,8 +10,16 @@ if(isset($_POST['user']) && isset($_POST['pass'])) {
      $load = mysqli_query($conn, "SELECT * FROM user WHERE (email = '".$myuser."' OR username = '".$myuser."') AND password='".$mypassword."'" );  
      $row = mysqli_fetch_array($load,MYSQLI_ASSOC);
 
+     $error = "";
+     if($row['role'] != 'Admin'){
+         if($row['role'] != $_POST['jenis']){
+            $error = "Your Login Credential is invalid";
+            // echo "<script>window.location.href = '../index.php';</script>";
+         }
+     }
+
      $count = mysqli_num_rows($load);
-     if($count == 1) {
+     if($count == 1 && $error == "") {
   
         $_SESSION['login_user'] = $row['username'];
         $_SESSION['login_id'] = $row['id'];

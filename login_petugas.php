@@ -53,6 +53,7 @@
                 </div>
                 <div class="login-form">
                     <form action="form/signin.php" method="POST">
+                        <input type="hidden" name="jenis" value="Petugas">
                         <div class="form-group">
                             <label>Email / Username</label>
                             <input type="text" class="form-control" placeholder="Email atau Username" id="inputEmailAddress" name="user" >
